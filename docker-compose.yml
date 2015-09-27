@@ -1,0 +1,23 @@
+elasticsearch01:
+    build: elastic
+    ports:
+        - 9200:9200
+        - 9300:9300
+elasticsearch02:
+    build: elastic
+    ports:
+        - 9201:9200
+        - 9301:9300
+elasticsearch03:
+    build: elastic
+    ports:
+        - 9202:9200
+        - 9303:9300
+kibana:
+    image: kibana
+    ports:
+        - 5601:5601
+    links:
+        - elasticsearch01
+logstash:
+    build: logstash
