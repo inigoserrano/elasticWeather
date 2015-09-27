@@ -1,15 +1,18 @@
 elasticsearch01:
     build: elastic
+    command: -Des.node.name="Inigo"
     ports:
         - 9200:9200
         - 9300:9300
 elasticsearch02:
     build: elastic
+    command: -Des.node.name="Itziar"
     ports:
         - 9201:9200
         - 9301:9300
 elasticsearch03:
     build: elastic
+    command: -Des.node.name="Joseba"
     ports:
         - 9202:9200
         - 9303:9300
@@ -18,6 +21,6 @@ kibana:
     ports:
         - 5601:5601
     links:
-        - elasticsearch01
+        - elasticsearch01:elasticsearch
 logstash:
     build: logstash
