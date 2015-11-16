@@ -1,18 +1,18 @@
 elasticsearch01:
     build: elastic
-    command: -Des.node.name="Inigo"
+    command: -Des.node.name="Inigo" -Ddiscovery.zen.ping.multicast.enabled=true --network.host _non_loopback_
     ports:
         - 9200:9200
         - 9300:9300
 elasticsearch02:
     build: elastic
-    command: -Des.node.name="Itziar"
+    command: -Des.node.name="Itziar" -Ddiscovery.zen.ping.multicast.enabled=true --network.host _non_loopback_
     ports:
         - 9201:9200
         - 9301:9300
 elasticsearch03:
     build: elastic
-    command: -Des.node.name="Joseba"
+    command: -Des.node.name="Joseba" -Ddiscovery.zen.ping.multicast.enabled=true --network.host _non_loopback_
     ports:
         - 9202:9200
         - 9303:9300
