@@ -24,3 +24,5 @@ kibana:
         - elasticsearch01:elasticsearch
 logstash:
     build: logstash
+    links:
+        - elasticsearch01:elasticsearch

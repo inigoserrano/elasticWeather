@@ -1,8 +1,11 @@
 #!/bin/bash
 
-#curl -XDELETE 'http://192.168.99.100:9200/weather/'
+#Sleep for 1 minute, to start the elastic
+sleep 60
 
-curl -XPUT 'http://192.168.99.100:9200/weather/' -d '
+curl -XDELETE 'http://elasticsearch:9200/weather/'
+
+curl -XPUT 'http://elasticsearch:9200/weather/' -d '
 index :
     number_of_shards : 3
     number_of_replicas : 1
